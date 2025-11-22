@@ -1,3 +1,29 @@
+# EDA 与数据预处理
+D:\数据挖掘\penguins_eda_processed.csv 为处理后的 Penguins 数据集。
+
+## 缺失值统计：
+                   缺失值数量  缺失比例(%)
+culmen_length_mm       2     0.58
+culmen_depth_mm        2     0.58
+flipper_length_mm      2     0.58
+body_mass_g            2     0.58
+sex                   10     2.91
+
+删除缺失值后数据量：334 行
+
+sex字段唯一值： ['MALE' 'FEMALE' '.']
+修正sex异常值后数据量：333 行
+
+## 分类特征编码示例（species/island/sex）：
+  species  species_encoded     island  island_encoded     sex  sex_encoded
+0  Adelie                0  Torgersen               2    MALE            1
+1  Adelie                0  Torgersen               2  FEMALE            0
+2  Adelie                0  Torgersen               2  FEMALE            0
+
+预处理完成！已保存为 penguins_eda_processed.csv
+
+# 工作内容
+
 | 部分                   | 工作内容                                                     |
 | ---------------------- | ------------------------------------------------------------ |
 | EDA（探索型数据分析）  | 一、预处理 1.统计缺失值、异常值（如sex字段的 “.”），执行清洗方案（删除空值、修正异常值）。 2.创建有意义的衍生特征（如喙长 / 喙深比率、体重 kg 转换），避免覆盖原始数据； 3.对数值特征进行标准化处理，对分类特征（如island）进行编码（独热编码 / 标签编码）； 4.生成预处理后的最终数据集。 二、数据探索 1.完成单变量分布（种类、岛屿、性别分布）、双变量关联（特征相关性热力图、散点图）、多维度对比（不同种类 / 性别 / 岛屿的特征差异可视化）； 2.整理可视化图表集（标注图表含义、分析结论），为报告 “数据可视化分析” 章节提供素材。 三、文档撰写 问题背景等、协作其他部分文档撰写 |
